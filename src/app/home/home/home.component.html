@@ -1,0 +1,22 @@
+<div layout="row"
+     layout-align="center center"
+     style="min-height: 500px;">
+    <app-sidenav></app-sidenav>
+    <mat-card class="example-card">
+        <mat-card-content [routerLink]="['/employees']"
+                          routerLinkActive="router-link-active">
+            <div mat-card-avatar
+                 class="example-header-image"></div>
+            <mat-card-title>Employees</mat-card-title>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="example-card">
+        <mat-card-content [routerLink]="['/projects']"
+                          routerLinkActive="router-link-active">
+            <div mat-card-avatar
+                 class="example-header-image"></div>
+            <mat-card-title>Projects</mat-card-title>
+        </mat-card-content>
+    </mat-card>
+</div>
