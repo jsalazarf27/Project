@@ -6,7 +6,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthenticateService } from './authenticate.service';
 
 @NgModule({
 	imports: [
@@ -18,7 +17,6 @@ import { AuthenticateService } from './authenticate.service';
 		BrowserAnimationsModule
 	],
 	declarations: [ LoginComponent ],
-	exports: [ LoginComponent ],
-	providers: [ AuthenticateService ]
+	exports: [ LoginComponent ]
 })
 export class AuthenticationModule {}

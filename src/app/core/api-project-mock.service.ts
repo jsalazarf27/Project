@@ -1,7 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class ApiProjectMockService implements InMemoryDbService {
 	createDb() {
-		const employes = [
+		const employees = [
 			{
 				id: 1,
 				name: 'Juan Carlos',
@@ -9,7 +9,7 @@ export class ApiProjectMockService implements InMemoryDbService {
 				age: '24',
 				birthday: '17/01/2015',
 				favoriteColor: 'red',
-				project: 'bancolombia'
+				project: 4
 			},
 			{
 				id: 2,
@@ -18,7 +18,7 @@ export class ApiProjectMockService implements InMemoryDbService {
 				age: '24',
 				birthday: '17/01/2015',
 				favoriteColor: 'red',
-				project: 'bancolombia'
+				project: 3
 			},
 			{
 				id: 3,
@@ -27,7 +27,7 @@ export class ApiProjectMockService implements InMemoryDbService {
 				age: '24',
 				birthday: '17/01/2015',
 				favoriteColor: 'red',
-				project: 'bancolombia'
+				project: 2
 			},
 			{
 				id: 4,
@@ -36,7 +36,7 @@ export class ApiProjectMockService implements InMemoryDbService {
 				age: '24',
 				birthday: '17/01/2015',
 				favoriteColor: 'red',
-				project: 'bancolombia'
+				project: 1
 			},
 			{
 				id: 6,
@@ -45,7 +45,7 @@ export class ApiProjectMockService implements InMemoryDbService {
 				age: '24',
 				birthday: '17/01/2015',
 				favoriteColor: 'red',
-				project: 'bancolombia'
+				project: 1
 			}
 		];
 
@@ -76,6 +76,6 @@ export class ApiProjectMockService implements InMemoryDbService {
 			}
 		];
 
-		return { employes, projects };
+		return { employees, projects };
 	}
 }

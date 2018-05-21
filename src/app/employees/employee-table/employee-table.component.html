@@ -45,11 +45,36 @@
             <td mat-cell
                 *matCellDef="let employee"> {{employee.project}} </td>
         </ng-container>
-
+        <ng-container matColumnDef="buttonEdit">
+            <th mat-header-cell
+                *matHeaderCellDef></th>
+            <td mat-cell
+                *matCellDef="let employee"> <button mat-raised-button
+                        type="submit"
+                        color="primary"
+                        [routerLink]="['/employe']"
+                        routerLinkActive="router-link-active">Editar</button></td>
+        </ng-container>
+        <ng-container matColumnDef="buttonRemove">
+            <th mat-header-cell
+                *matHeaderCellDef></th>
+            <td mat-cell
+                *matCellDef="let employee">
+                <button mat-raised-button
+                        type="submit"
+                        color="primary"
+                        (click)="remove(employee)">Eliminar</button></td>
+        </ng-container>
         <tr mat-header-row
             *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row
             *matRowDef="let row; columns: displayedColumns;"></tr>
 
     </table>
+    <div>
+        <button mat-raised-button
+                type="submit"
+                color="primary"
+                routerLinkActive="router-link-active">Nuevo</button>
+    </div>
 </div>

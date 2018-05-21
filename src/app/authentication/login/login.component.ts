@@ -5,7 +5,7 @@ import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-import { AuthenticateService } from '../authenticate.service';
+import { AuthenticateService } from '../../core/authenticate.service';
 
 @Component({
 	selector: 'app-login',
@@ -14,11 +14,9 @@ import { AuthenticateService } from '../authenticate.service';
 })
 export class LoginComponent {
 	formGroup: FormGroup;
-	user: User;
+	login$;
 	errorMsg = '';
-	// userFormControl = new FormControl('', [ Validators.required ]);
-	// passwordFormControl = new FormControl('', [Validators.required]);
-
+	private user: User;
 	constructor(
 		private fb: FormBuilder,
 		private service: AuthenticateService,
@@ -30,12 +28,29 @@ export class LoginComponent {
 		});
 	}
 
+	validateInput(text: string) {
+		return (
+			(!this.formGroup.get(text).valid && this.formGroup.get(text).touched) ||
+			this.formGroup.get(text).untouched
+		);
+	}
+
 	login() {
 		this.user = this.formGroup.value;
-		if (!this.service.isValidUser(this.user)) {
+		if (
+			!(
+				this.user.user === 'admin' &&
+				this.user.password === '1234' &&
+				this.service.login('true').subscribe((data) => {
+					this.redirectHome();
+				})
+			)
+		) {
 			this.errorMsg = 'Invalid User and Password! try again ...';
-		} else {
-			// this.router.navigate([ '/employees' ]);
 		}
+	}
+
+	redirectHome() {
+		this.router.navigateByUrl('/home');
 	}
 }

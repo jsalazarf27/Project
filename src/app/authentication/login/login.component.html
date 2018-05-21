@@ -7,31 +7,32 @@
                    type="text"
                    placeholder="User"
                    formControlName="user">
-            <!-- <mat-error *ngIf="emailFormControl.hasError('user') && !emailFormControl.hasError('required')">
-                Please enter a valid user
-            </mat-error> -->
-            <!-- <mat-error *ngIf="userFormControl.hasError('required')">
+            <mat-error *ngIf="validateInput('user')">
                 User is <strong>required</strong>
-            </mat-error> -->
+            </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <input matInput
                    type="password"
                    placeholder="Password"
                    formControlName="password">
-            <!-- <mat-error *ngIf="emailFormControl.hasError('password') && !emailFormControl.hasError('required')">
-                Please enter a password
-            </mat-error> -->
-            <!-- <mat-error *ngIf="passwordFormControl.hasError('required')">
+            <mat-error *ngIf="validateInput('password')">
                 Password is <strong>required</strong>
-            </mat-error> -->
+            </mat-error>
         </mat-form-field>
         <button mat-raised-button
                 type="submit"
                 color="primary"
-                [routerLink]="['/home']"
+                (click)="login()"
                 routerLinkActive="router-link-active">Login</button>
         <p>{{errorMsg}}
             <p>
     </form>
+
+    <div>
+        User: admin
+    </div>
+    <div>
+        Password: 1234
+    </div>
 </div>

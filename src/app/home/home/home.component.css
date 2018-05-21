@@ -1,10 +1,22 @@
 .example-card {
+    min-width: 200px;
     max-width: 400px;
     float: left;
     text-align: center;
 }
 
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+.card-image-one {
+    background-image: url("/assets/person.svg");
     background-size: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-image-two {
+    background-image: url("/assets/project.svg");
+    background-size: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

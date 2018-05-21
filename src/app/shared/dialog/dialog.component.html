@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>
+    It is safe to delete the record?</h2>
+<mat-dialog-content>
+    <h3>{{data.name}}</h3>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button
+            type="button"
+            color="warn"
+            mat-dialog-close>No Thanks</button>
+    <button mat-button
+            color="primary"
+            (click)="submit()">Ok</button>
+</mat-dialog-actions>
